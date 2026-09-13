@@ -3,57 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuyao Zhang</title>
+    <title>张昱瑶 | 个人主页 - 手风琴演奏</title>
     <style>
-        /* 极简黑白风格设置 */
-        body, html {
+        /* 基础重置 */
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            background-color: #ffffff; /* 纯白背景 */
-            color: #000000; /* 纯黑文字 */
-            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
-            
-            /* 使用 Flex 布局让内容在屏幕正中央 */
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fcfcfc;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c99c33; /* 艺术感的金色点缀 */
+        }
+
+        /* 英雄区块（主视觉） */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        .container {
             text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 0 20px;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            font-weight: 600;
-            letter-spacing: 4px; /* 增加字间距让视觉更透气 */
+        .hero h1 {
+            font-size: 4rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
         }
 
-        p {
+        .hero p {
+            font-size: 1.5rem;
+            color: #555;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* 个人简介区块 */
+        .about-section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c99c33;
+            margin: 15px auto 0;
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .intro-box {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .intro-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .intro-box h3 {
             font-size: 1.2rem;
-            margin-top: 15px;
-            color: #000000;
-            letter-spacing: 2px;
+            color: #c99c33;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .intro-box p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .intro-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .nav-links {
+                display: none; /* 移动端暂时隐藏菜单或后续加入汉堡菜单 */
+            }
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Yuyao Zhang</h1>
-        <p>music performance</p>
-        <p>"Graduated with a bachelor's degree from Guizhou Normal University 
-            and currently enrolled as a master's student (Class of 2025) in the Accordion 
-            and Modern Instrumental Music Department at the Sichuan Conservatory of Music. 
-            Deeply dedicated to accordion performance, having won major professional awards 
-            including first place in the Adult Pop category of the China Division at the 2026 CMA World Accordion Championship, 
-            and third prize in the accordion category at the 2026 American Virtuoso Competition. 
-            Additionally, actively involved in various music education activities and stage performances, 
-            demonstrating outstanding comprehensive musical literacy. “</p>
-        <p> For more detailed experiences, please stay tuned for future website updates.</p>
-    </div>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#" class="logo">ZHANG YUYAO</a>
+        <ul class="nav-links">
+            <li><a href="#home">首页 / Home</a></li>
+            <li><a href="#about">简介 / About</a></li>
+        </ul>
+    </nav>
 
+    <!-- 主视觉区 -->
+    <section class="hero" id="home">
+        <h1>张昱瑶</h1>
+        <p>手风琴演奏 / 音乐人<br>Accordionist & Musician</p>
+    </section>
+
+    <!-- 简介区 -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">Profile</h2>
+        
+        <div class="intro-container">
+            <!-- 中文简介 -->
+            <div class="intro-box">
+                <h3>中文简介</h3>
+                <p>
+                    本科毕业于贵州师范大学，现为四川音乐学院2025级手风琴与现代器乐系的硕士研究生。深耕手风琴演奏领域，曾斩获2026年CMA世界手风琴锦标赛中国赛区成人流行组第一名及2026年美国演奏家手风琴组三等奖等专业大奖。此外，积极投身各项音乐教育活动与舞台实践，展现了出色的音乐综合素养，更多详细经历敬请等待网站的后续更新。
+                </p>
+            </div>
+
+            <!-- 英文简介 (已优化无 "She" 主语) -->
+            <div class="intro-box">
+                <h3>English Bio</h3>
+                <p>
+                    Graduated with a bachelor's degree from Guizhou Normal University and currently enrolled as a master's student (Class of 2025) in the Accordion and Modern Instrumental Music Department at the Sichuan Conservatory of Music. Deeply dedicated to accordion performance, having won major professional awards including first place in the Adult Pop category of the China Division at the 2026 CMA World Accordion Championship, and third prize in the accordion category at the 2026 American Virtuoso Competition. Additionally, actively involved in various music education activities and stage performances, demonstrating outstanding comprehensive musical literacy. For more detailed experiences, please stay tuned for future website updates.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 张昱瑶 (Zhang Yuyao). All Rights Reserved.</p>
+        <p>Stay tuned for future website updates.</p>
+    </footer>
+
+    <!-- 平滑滚动脚本 -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
